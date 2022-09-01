@@ -3,7 +3,6 @@ const rock=0;
 const paper=1;
 const scissors=2;
 let computerChoice; 
-let playerChoice;
 let playerLowerChoice;
 let scoreComputer = 0;
 let scorePlayer = 0;
@@ -29,7 +28,7 @@ function getPlayerInformation(){
 function player(){
     let possibility = ['rock','paper','scissors'];
     //  ask player for play 
-    playerChoice= prompt(playerName + ' Please Type Rock, Paper or Scissor','');
+    let playerChoice= prompt(playerName + ' Please Type Rock, Paper or Scissor','');
     playerLowerChoice = playerChoice.toLocaleLowerCase();
     // check if played world exist 
     if( playerLowerChoice == 'quit')
