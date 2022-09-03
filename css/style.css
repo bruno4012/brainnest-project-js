@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #383737;
+}
+button {
+    transition: ease-in .2s;
+    width: 9em;
+    height: 3em;
+    font-size: 1.5em;
+    border-radius: 2em;
+    cursor: pointer;
+    border-style: solid;
+    background: #99c7ef;
+}
+button:hover {
+    border-style: dashed;
+    background: #83b2dc;
+}

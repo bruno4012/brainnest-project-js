@@ -6,8 +6,9 @@ let computerChoice;
 let playerLowerChoice;
 let scoreComputer = 0;
 let scorePlayer = 0;
+let i = 0;
 
-getPlayerInformation();
+
 
 function getPlayerInformation(){
     alert('hey there');
@@ -24,27 +25,20 @@ function getPlayerInformation(){
     }
 }
 
-
 function player(){
     let possibility = ['rock','paper','scissors'];
     //  ask player for play 
     let playerChoice= prompt(playerName + ' Please Type Rock, Paper or Scissor','');
     playerLowerChoice = playerChoice.toLocaleLowerCase();
     // check if played world exist 
-    if( playerLowerChoice == 'quit')
-    {
-        window.close();
-    }
-    else if (possibility.indexOf(playerLowerChoice) !== -1){
+    if (possibility.indexOf(playerLowerChoice) !== -1){
         computerPlay();
     }
     else{
-            alert('incorrect input (to quit the game just type quit)');
+            alert('incorrect input');
             player();
     }
-   
 }
-
 function computerPlay(){
     const randomGenNumber = Math.floor(Math.random() * 3);
 
@@ -60,12 +54,9 @@ function computerPlay(){
     alert('Computer Choose '+ computerChoice );
     gameScore();
 }
-
-
 function gameScore(){
     if (computerChoice == playerLowerChoice){
         alert('Draw');
-        
     }
     else if (computerChoice == 'rock' && playerLowerChoice == 'paper'){
         alert(playerName + ' win');
@@ -83,30 +74,49 @@ function gameScore(){
         alert('computer win');  
         scoreComputer++;
     }
-    alert('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer); 
     gamecheckWiner();
 }
-
 function gamecheckWiner(){
-
-    if(scoreComputer == 3 && scoreComputer > scorePlayer){
-        alert('Computer Is The WINER');
-        resetGame();
-    } 
-    else if (scorePlayer == 3 && scorePlayer > scoreComputer) {
-        alert(playerName +' Is The WINER');
-        resetGame();
-    } 
-    else {
-        player();
+    while( i < 4){
+         i++;
+         console.log(i)
+         console.log('computer ' + computerChoice +' '+ playerName +' '+ playerLowerChoice);
+         console.log('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer);
+         player();
+         
     }
+    if(scoreComputer == scorePlayer)
+    { 
+        console.log('Drawn');
+        player(); 
+    }
+    else if (scoreComputer > scorePlayer){
+        alert('Game Over');
+        alert('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer); 
+        resetGame();
+    }else{
+        alert(playerName +' Win The Game');
+        alert('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer); 
+        resetGame();
+    }
+    // if(scoreComputer == 3 && scoreComputer > scorePlayer){
+    //     alert('Computer Is The WINER');
+    //     resetGame();
+    // } 
+    // else if (scorePlayer == 3 && scorePlayer > scoreComputer) {
+    //     alert(playerName +' Is The WINER');
+    //     resetGame();
+    // } 
+    // else {
+    //     player();
+    // }
 }
-
 function resetGame(){
     scorePlayer = 0;
     scoreComputer = 0;
+    i = 0;
     alert('Would You Like To Play Again ?')
-    let replayGame = prompt('Please Type Yes, No or Change Name', '');
+    let replayGame = prompt('Please Type Yes, No or Change Name');
     let replayGameLower = replayGame.toLocaleLowerCase();
 
     if (replayGameLower == 'yes'){
