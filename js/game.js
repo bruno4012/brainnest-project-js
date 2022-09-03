@@ -93,14 +93,24 @@ function gamecheckWiner(){
     else if (scoreComputer > scorePlayer){
         alert('Game Over');
         alert('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer); 
+        resetGame();
     }else{
         alert(playerName +' Win The Game');
         alert('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer); 
+        resetGame();
     }
-    console.log(i)
-    console.log('computer ' + computerChoice +' '+ playerName +' '+ playerLowerChoice);
-    console.log('computer ' + scoreComputer +' '+ playerName +' '+ scorePlayer);
-    resetGame();
+    
+    // if(scoreComputer == 3 && scoreComputer > scorePlayer){
+    //     alert('Computer Is The WINER');
+    //     resetGame();
+    // } 
+    // else if (scorePlayer == 3 && scorePlayer > scoreComputer) {
+    //     alert(playerName +' Is The WINER');
+    //     resetGame();
+    // } 
+    // else {
+    //     player();
+    // }
 }
 
 function resetGame(){
