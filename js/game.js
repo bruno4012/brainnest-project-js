@@ -77,7 +77,7 @@ function gameScore(){
 }
 
 function gamecheckWiner(){
-    while( i < 5){
+    while( i < 4){
          i++;
          console.log(i)
          console.log('computer ' + computerChoice +' '+ playerName +' '+ playerLowerChoice);
