@@ -1,14 +1,11 @@
 let playerName='';
-const rock=0;
-const paper=1;
-const scissors=2;
 let computerChoice; 
 let playerLowerChoice;
 let scoreComputer = 0;
 let scorePlayer = 0;
 let i = 0;
 
-
+getPlayerInformation();
 
 function getPlayerInformation(){
     alert('hey there');
@@ -26,7 +23,7 @@ function getPlayerInformation(){
 }
 
 function player(){
-    let possibility = ['rock','paper','scissors'];
+    let possibility = ['rock','paper','scissor'];
     //  ask player for play 
     let playerChoice= prompt(playerName + ' Please Type Rock, Paper or Scissor','');
     playerLowerChoice = playerChoice.toLocaleLowerCase();
@@ -39,6 +36,7 @@ function player(){
             player();
     }
 }
+
 function computerPlay(){
     const randomGenNumber = Math.floor(Math.random() * 3);
 
@@ -49,11 +47,12 @@ function computerPlay(){
         computerChoice = 'rock'
     }
     if (randomGenNumber == 2){
-        computerChoice = 'scissors'
+        computerChoice = 'scissor'
     }
     alert('Computer Choose '+ computerChoice );
     gameScore();
 }
+
 function gameScore(){
     if (computerChoice == playerLowerChoice){
         alert('Draw');
@@ -62,11 +61,11 @@ function gameScore(){
         alert(playerName + ' win');
         scorePlayer++;
     }
-    else if (computerChoice == 'paper' && playerLowerChoice == 'scissors'){
+    else if (computerChoice == 'paper' && playerLowerChoice == 'scissor'){
         alert(playerName + ' win');
         scorePlayer++;
     }   
-    else if (computerChoice == 'scissors' && playerLowerChoice == 'rock'){
+    else if (computerChoice == 'scissor' && playerLowerChoice == 'rock'){
         alert(playerName + ' win');
         scorePlayer++;
     }
@@ -76,6 +75,7 @@ function gameScore(){
     }
     gamecheckWiner();
 }
+
 function gamecheckWiner(){
     while( i < 4){
          i++;
@@ -111,6 +111,7 @@ function gamecheckWiner(){
     //     player();
     // }
 }
+
 function resetGame(){
     scorePlayer = 0;
     scoreComputer = 0;
@@ -121,15 +122,12 @@ function resetGame(){
 
     if (replayGameLower == 'yes'){
         player();
-        // alert(replayGameLower)
     }
     else if ( replayGameLower == 'change name'){
         getPlayerInformation();
-        // alert(replayGameLower)
     }
     else if  ( replayGameLower == 'no'){
         window.close();
-        // alert(replayGameLower)
     }
     else {
         alert('choice not valid')
